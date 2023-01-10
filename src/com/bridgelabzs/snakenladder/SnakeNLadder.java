@@ -7,12 +7,14 @@ public class SnakeNLadder {
     public static void main(String[] args) {
 		System.out.println("welcome to snake and ladder game ");
         int position = 0;
+        int DiceRollCount= 0;
         final int WinningPosition = 100;
         while(position <= WinningPosition) {
             Random rand = new Random();
             int DiceValue = 1+rand.nextInt(6);
             System.out.println("Dice Value is " + DiceValue);
             int option = rand.nextInt(3);
+            DiceRollCount++;
             System.out.println("Current Option : " +option);
             if(position==WinningPosition){
                 System.out.println("You Won the game");
@@ -45,6 +47,7 @@ public class SnakeNLadder {
                 default:
                     System.out.println("Not Correct Option");
             }
+            System.out.println("Dice Roll Count " + DiceRollCount);
         }
     }
 }
